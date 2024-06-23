@@ -16,10 +16,15 @@
                        name="msg-to-send" 
                        id="msg-to-send" class="msg-to-send"
                        placeholder="Hello World?">
-                <input type="button" value="Send" onclick="SendMessage()">
+                <input type="button" value="Send", onclick="SendMessage()">
             </form>
         </div>
     </div>
     <script src="{{ url_for('static', filename='room-script.js') }}"></script>
+    {% for msg in messages %}
+        <script>
+            CreateMessage("{{ msg.name }}", "{{ msg.message }}")
+        </script>
+    {% endfor %}
 </body>
 </html>

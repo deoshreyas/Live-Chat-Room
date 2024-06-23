@@ -1,4 +1,4 @@
-let messages = document.querySelectorAll(".message")
+let messages = document.querySelectorAll(".message");
 
 // Converts integer to hex 
 const colToHex = (c) => {
@@ -32,3 +32,9 @@ let primary = getRandomColor();
 let tertiary = getRandomColor();
 document.documentElement.style.setProperty('--primary-col', primary);
 document.documentElement.style.setProperty('--tertiary-col', tertiary);
+
+var socketio = io();
+
+const SendMessage = () => {
+    console.log("send");
+};

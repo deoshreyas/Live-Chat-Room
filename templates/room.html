@@ -4,36 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Python Live Chat using Flask and SocketIO | Room</title>
-    <link rel="stylesheet" href="room-style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='room-style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="flex">
+        <h1>Room: {{ room }}</h1>
         <div class="messages">
-            <div class="message">
-                <div class="from">Announce:</div>
-                <div class="msg">I have joined</div>
-            </div>
-            <div class="message">
-                <div class="from">ID897</div>
-                <div class="msg">Hello and welcome! Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam ipsum nisi temporibus laborum atque distinctio iusto rem debitis vitae quasi veritatis provident, ducimus, nobis neque commodi. Accusantium fugit recusandae quam.</div>
-            </div>
-            <div class="message">
-                <div class="from">ID001</div>
-                <div class="msg">This is more random text!!</div>
-            </div>
-            <div class="message">
-                <div class="from">ID777</div>
-                <div class="msg">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex laborum laudantium quam rem dignissimos perspiciatis earum est ipsam libero enim a illo, ducimus fuga commodi deserunt expedita temporibus, vel id!Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita, culpa repellat labore perspiciatis natus accusantium doloremque nulla illum quasi eveniet perferendis aut porro nemo molestiae dolores. Necessitatibus veniam eaque possimus.</div>
-            </div>
             <form class="send-msg">
                 <input type="text" 
                        name="msg-to-send" 
                        id="msg-to-send" class="msg-to-send"
                        placeholder="Hello World?">
-                <input type="button" value="Send">
+                <input type="button" value="Send" onclick="SendMessage()">
             </form>
         </div>
     </div>
-    <script src="room-script.js"></script>
+    <script src="{{ url_for('static', filename='room-script.js') }}"></script>
 </body>
 </html>

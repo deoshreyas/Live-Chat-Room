@@ -11,26 +11,26 @@
     <div class="flex">
         <h1>Python Live Chat</h1>
         <h2>A small demonstration of a Live Chat Room built using Python Flask and SocketIO</h2>
-        <form action="POST">
+        <form method="POST">
             <input type="text" 
-                   id="username" 
-                   name="username" 
+                   id="name" 
+                   name="name" 
                    placeholder="Enter your username"
-                   value="{{ username }}"> <br>
+                   value="{{ name }}"> <br>
             <input type="text" 
                    id="code" 
                    name="code" 
                    placeholder="Enter room code" 
                    value="{{ code }}"> <br>
-            <input type="submit" value="Submit" id="submit" name="join"> <br>
-            <button type="submit" id="create-room" class="create-room" name="create">Create New Room</button>
+            <input type="submit" value="Submit" id="join" name="join"> <br>
+            <button type="submit" id="create" class="create" name="create">Create New Room</button>
         </form>
     </div>
-    { %% if error %% }
+    {% if error %}
     <ul>
         <li class="error">{{ error }}</li>
     </ul>
-    { %% endif %% }
+    {% endif %}
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

@@ -21,6 +21,13 @@ body .flex {
     height: 100vh;
 }
 
+body .flex h1 {
+    position: absolute;
+    top: 1em;
+    width: 100vw;
+    text-align: center;
+}
+
 body .messages {
     background-color: var(--secondary-col);
     max-width: 700px;
@@ -32,7 +39,6 @@ body .messages {
     box-sizing: border-box;
     overflow-y: scroll;
     scrollbar-width: none;
-    position: relative;
 }
 
 body .messages .message {
@@ -60,17 +66,18 @@ body .messages .message .msg {
 
 body .messages form {
     width: 100%;
-    position: sticky;
+    position: fixed;
     bottom: 0em;
     left: 0em;
-    margin: 0;
     padding: .5em;
+    padding-bottom: 1em;
+    margin-bottom: 1em;
     height: 2em;
     background-color: var(--secondary-col);
 }
 
 body .messages form input[type="text"] {
-    width: 76%;
+    width: 78%;
     box-sizing: border-box;
     font-size: 1.5em;
     border: .1em solid var(--tertiary-col);

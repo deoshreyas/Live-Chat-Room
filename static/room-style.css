@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
+:root {
+    --primary-col: #EAC435;
+    --secondary-col: #22181C;
+    --tertiary-col: #03CEA4;
+}
+
+body {
+    background-color: var(--primary-col);
+    font-family: 'Fira Code', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body .flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+body .messages {
+    background-color: var(--secondary-col);
+    max-width: 700px;
+    max-height: 400px;
+    width: 100%;
+    height: 100%;
+    margin: 1.5em;
+    padding: 1em;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    position: relative;
+}
+
+body .messages .message {
+    width: 100%;
+    font-size: 1.25em;
+    padding: 0 .5em;
+    box-sizing: border-box;
+    display: flex;
+    margin-bottom: .1em;
+}
+
+body .messages .message .msg, .from {
+    display: inline;
+}
+
+body .messages .message .from {
+    padding-right: .5em;
+    flex-direction: row;
+}
+
+body .messages .message .msg {
+    width: 90%;
+    height: 100%;
+}
+
+body .messages form {
+    width: 100%;
+    position: sticky;
+    bottom: 0em;
+    left: 0em;
+    margin: 0;
+    padding: .5em;
+    height: 2em;
+    background-color: var(--secondary-col);
+}
+
+body .messages form input[type="text"] {
+    width: 76%;
+    box-sizing: border-box;
+    font-size: 1.5em;
+    border: .1em solid var(--tertiary-col);
+    background-color: transparent;
+    color: var(--primary-col);
+    font-family: 'Fira Code', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    outline: none;
+}
+
+body .messages form input[type="button"] {
+    width: 20%;
+    box-sizing: border-box;
+    font-size: 1.5em;
+    background-color: transparent;
+    border: .1em solid var(--primary-col);
+    color: var(--primary-col);
+    font-family: 'Fira Code', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body .messages form input[type="button"]:hover {
+    cursor: pointer;
+    background-color: var(--primary-col);
+    color: var(--secondary-col);
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Live Chat using Flask and SocketIO | Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js" integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA==" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="flex">
+        <h1>Python Live Chat</h1>
+        <h2>A small demonstration of a Live Chat Room built using Python Flask and SocketIO</h2>
+        <form action="POST">
+            <input type="text" 
+                   id="username" 
+                   name="username" 
+                   placeholder="Enter your username"
+                   value="{{ username }}"> <br>
+            <input type="text" 
+                   id="code" 
+                   name="code" 
+                   placeholder="Enter room code" 
+                   value="{{ code }}"> <br>
+            <input type="submit" value="Submit" id="submit" name="join"> <br>
+            <button type="submit" id="create-room" class="create-room" name="create">Create New Room</button>
+        </form>
+    </div>
+    { %% if error %% }
+    <ul>
+        <li class="error">{{ error }}</li>
+    </ul>
+    { %% endif %% }
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
